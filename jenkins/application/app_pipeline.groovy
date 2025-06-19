@@ -6,7 +6,7 @@ def call() {
             sh 'ls -la'
         }
         dir('milestone') {
-            git branch 'main', url: 'https://github.com/iviul/Milestone-2.git'
+            git branch: 'main', url: 'https://github.com/iviul/Milestone-2.git'
             sh 'ls -la'
         }
     }
