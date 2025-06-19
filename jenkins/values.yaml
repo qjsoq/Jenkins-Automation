@@ -48,6 +48,10 @@ controller:
                   }
                 }
               }
+              
+        security:
+          gitHostKeyVerificationConfiguration:
+            sshHostKeyVerificationStrategy: "acceptFirstConnectionStrategy"
   sidecars:
     configAutoReload:
       enabled: true
