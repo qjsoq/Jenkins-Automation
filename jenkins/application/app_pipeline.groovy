@@ -1,15 +1,20 @@
 def call() {
     podTemplate(
-        label: 'ansible-agent-application',
-        serviceAccount: 'jenkins-service-account', 
+        label: 'ansible-agent',
         containers: [
             containerTemplate(
                 name: 'ansible',
-                image: 'artamonovdima/application_agent:1.0', // твій образ
+                image: 'artamonovdima/application_agent:1.0',
                 command: 'cat',
-                ttyEnabled: true
+                ttyEnabled: true,
+                resourceRequestCpu: '100m',
+                resourceRequestMemory: '256Mi',
+                resourceLimitCpu: '200m',
+                resourceLimitMemory: '512Mi'
             )
-        ]
+        ],
+        serviceAccount: 'jenkins',
+        namespace: 'jenkins'
     ) {
         node('ansible-agent-application') {
             container('ansible') {
