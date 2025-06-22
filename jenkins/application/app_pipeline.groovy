@@ -16,7 +16,7 @@ def call() {
         serviceAccount: 'jenkins',
         namespace: 'jenkins'
     ) {
-        node('ansible-agent-application') {
+        node('ansible-agent') {
             container('ansible') {
                 stage('Clone Repositories') {
                     dir('config') {
