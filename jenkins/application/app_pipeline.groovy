@@ -30,7 +30,7 @@ def call() {
                 }
 
                 stage('Test access to cluster') {
-                    sh 'kubectl get pods -n jenkins'
+                    sh 'kubectl get pods'
                 }
             }
         }
