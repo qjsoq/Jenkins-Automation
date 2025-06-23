@@ -41,7 +41,7 @@ def call() {
                         ansible-playbook "/home/jenkins/agent/workspace/Main Pipeline Job/milestone/ansible/app_deploy.yml"
                     '''
                 }
-
+            }
         }
     }
 }
