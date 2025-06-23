@@ -4,7 +4,7 @@ def call() {
         containers: [
             containerTemplate(
                 name: 'ansible',
-                image: 'artamonovdima/application_agent:2.0',
+                image: 'artamonovdima/application_agent:3.0',
                 command: 'cat',
                 ttyEnabled: true,
                 resourceRequestCpu: '100m',
@@ -38,13 +38,10 @@ def call() {
 
                 stage('Run Ansible Playbook') {
                     sh '''
-                        apt-get update && apt-get install -y python3-pip
-                        pip3 install openshift pyyaml kubernetes --break-system-packages
-                        ansible-galaxy collection install kubernetes.core
                         ansible-playbook "/home/jenkins/agent/workspace/Main Pipeline Job/milestone/ansible/app_deploy.yml"
                     '''
                 }
-            }
+
         }
     }
 }
