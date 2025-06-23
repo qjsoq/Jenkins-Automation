@@ -16,16 +16,18 @@ def call() {
         serviceAccount: 'jenkins',
         namespace: 'jenkins'
     ) {
-        node('ansible-agent-application') {
+        node('ansible-agent') {
             container('ansible') {
                 stage('Clone Repositories') {
                     dir('config') {
                         git branch: 'DI-34-Develop', credentialsId: 'ssh_privatekey_github', url: 'git@github.com:iviul/Config.git'
                         sh 'ls -la'
+                        sh 'pwd'
                     }
                     dir('milestone') {
                         git branch: 'main', url: 'https://github.com/iviul/Milestone-2.git'
                         sh 'ls -la'
+                        sh 'pwd'
                     }
                 }
 
