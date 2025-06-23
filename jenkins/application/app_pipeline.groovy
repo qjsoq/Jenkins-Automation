@@ -25,7 +25,7 @@ def call() {
                         sh 'pwd'
                     }
                     dir('milestone') {
-                        git branch: 'main', url: 'https://github.com/iviul/Milestone-2.git'
+                        git branch: 'test-jenkins-application', url: 'https://github.com/iviul/Milestone-2.git'
                         sh 'ls -la'
                         sh 'pwd'
                     }
