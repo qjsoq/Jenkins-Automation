@@ -34,7 +34,13 @@ def call() {
                     }
                 }
 
-
+                stage('Setup Ansible Collections') {
+                    sh '''
+                        ansible-galaxy collection install kubernetes.core --force
+                        
+                        ansible-galaxy collection list | grep kubernetes.core
+                    '''
+                }
 
                 stage('Run Ansible Playbook') {
                     sh '''
