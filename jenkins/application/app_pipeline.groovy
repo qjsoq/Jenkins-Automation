@@ -34,14 +34,6 @@ def call() {
                     }
                 }
 
-                stage('Setup Ansible Collections') {
-                    sh '''
-                        ansible-galaxy collection install kubernetes.core --force
-                        
-                        ansible-galaxy collection list | grep kubernetes.core
-                    '''
-                }
-
                 stage('Run Ansible Playbook') {
                     sh '''
                         ansible-playbook "/home/jenkins/agent/workspace/Main Pipeline Job/milestone/ansible/app_deploy.yml"
