@@ -13,7 +13,7 @@ def call() {
                 resourceLimitMemory: '512Mi'
             )
         ],
-        serviceAccount: 'jenkins',
+        serviceAccount: 'jenkins-service-account',
         namespace: 'jenkins'
     ) {
         node('ansible-agent') {
