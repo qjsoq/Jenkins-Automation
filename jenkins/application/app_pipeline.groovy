@@ -29,8 +29,11 @@ def call() {
                     }
                 }
 
-                stage('Test access to cluster') {
-                    sh 'kubectl get nodes'
+                stage('Copy Configurations') {
+                    sh 'cp /home/jenkins/agent/workspace/Main Pipeline Job/config/config-kuber.json Running in /home/jenkins/agent/workspace/Main Pipeline Job/milestone/terraform'
+                }
+                stage('Run Ansible Playbook') {
+                    sh 'ansible-playbook /home/jenkins/agent/workspace/Main Pipeline Job/milestone/ansible/app_deploy.yml'
                 }
             }
         }
