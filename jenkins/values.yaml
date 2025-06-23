@@ -33,7 +33,7 @@ controller:
 
         jobs:
           - script: >
-              pipelineJob('Main Pipeline Job') {
+              pipelineJob('Application Pipeline Job') {
                 definition {
                   cpsScm {
                     scm {
