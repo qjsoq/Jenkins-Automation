@@ -44,7 +44,23 @@ controller:
                         branches('*/main')
                       }
                     }
-                    scriptPath('Jenkinsfile')
+                    scriptPath('jenkins/application/Jenkinsfile')
+                  }
+                }
+              }
+          - script: >
+              pipelineJob('Infrastructure Pipeline Job') {
+                definition {
+                  cpsScm {
+                    scm {
+                      git {
+                        remote {
+                          url('https://github.com/qjsoq/Jenkins-Automation.git')
+                        }
+                        branches('*/main')
+                      }
+                    }
+                    scriptPath('jenkins/infra/Jenkinsfile')
                   }
                 }
               }
