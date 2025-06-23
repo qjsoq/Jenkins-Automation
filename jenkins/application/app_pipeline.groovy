@@ -4,7 +4,7 @@ def call() {
         containers: [
             containerTemplate(
                 name: 'ansible',
-                image: 'artamonovdima/application_agent:3.0',
+                image: 'artamonovdima/application_agent:4.0',
                 command: 'cat',
                 ttyEnabled: true,
                 resourceRequestCpu: '100m',
