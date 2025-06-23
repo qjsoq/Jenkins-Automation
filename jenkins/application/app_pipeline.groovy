@@ -29,11 +29,13 @@ def call() {
                         sh 'ls -la'
                         sh 'pwd'
                     }
+                    dir('milestone/terraform') {
+                        sh 'cp "../../config/config-kuber.json" .'
+                    }
                 }
 
-                stage('Copy Configurations') {
-                    sh 'cp /home/jenkins/agent/workspace/Main Pipeline Job/config/config-kuber.json Running in /home/jenkins/agent/workspace/Main Pipeline Job/milestone/terraform'
-                }
+
+
                 stage('Run Ansible Playbook') {
                     sh 'ansible-playbook /home/jenkins/agent/workspace/Main Pipeline Job/milestone/ansible/app_deploy.yml'
                 }
