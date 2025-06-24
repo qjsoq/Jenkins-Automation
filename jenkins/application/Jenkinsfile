@@ -22,13 +22,13 @@ pipeline {
                     sh 'ls -la'
                     sh 'pwd'
                 }
-                dir('milestone') {
-                    git branch: 'test-jenkins-application', url: 'https://github.com/iviul/Milestone-2.git'
+                dir('ansible') {
+                    git branch: 'main', url: 'https://github.com/qjsoq/Ansible-repo.git'
                     sh 'ls -la'
                     sh 'pwd'
                 }
-                dir('milestone/terraform') {
-                    sh 'cp "../../config/config-kuber.json" .'
+                dir('ansible') {
+                    sh 'cp "../config/config-kuber.json" .'
                 }
             }
         }
