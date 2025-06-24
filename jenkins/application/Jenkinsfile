@@ -36,7 +36,7 @@ pipeline {
         stage('Run Ansible Playbook') {
             steps {
                 sh '''
-                    ansible-playbook "/home/jenkins/agent/workspace/${JOB_NAME}/milestone/ansible/app_deploy.yml"
+                    ansible-playbook "/home/jenkins/agent/workspace/${JOB_NAME}/ansible/app_deploy.yml"
                 '''
             }
         }
