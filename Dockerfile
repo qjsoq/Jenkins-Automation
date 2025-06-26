@@ -1,9 +1,10 @@
-FROM jenkins/jenkins:2.452.1-lts
+FROM jenkins/jenkins:2.452.3
 
 RUN jenkins-plugin-cli --plugins \
-    kubernetes:4353.vb_47977da_9417 \
-    workflow-job:1520.v56d65e3b_4566 \
-    job-dsl:1.92 \
-    configuration-as-code:1775.v810dc950b_514 \
-    git:5.7.0 \
-    workflow-aggregator:608.v67378e9d3db_1
+    kubernetes:4151.v6fa_f0fb_0b_4c9 \
+    workflow-job:1400.v7fd111b_ec82f \
+    job-dsl:1.87 \
+    configuration-as-code:1836.vccda_4a_122a_a_e \
+    git:5.2.1 \
+    workflow-aggregator:596.v8c21c963d92d \
+    generic-webhook-trigger:1.88.0
